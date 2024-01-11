@@ -1,22 +1,22 @@
 html
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Discord Button</title>
+  <title>My Website</title>
 </head>
+
 <body>
-  <button onclick="redirectToDiscord()">Discord</button>
+  <button onclick="redirectTo('credits.html')">Credits</button>
+  <button onclick="redirectTo('https://discord.gg/2p7xe8udw5')">Discord</button>
+  <button onclick="redirectTo('cheats.html')">Cheats</button>
+  <button onclick="redirectTo('credits.html')">RP</button>
 
   <script>
-    // Функция для перенаправления на https://discord.gg/2p7xe8udw5
-    function redirectToDiscord() {
-      window.location.href = "https://discord.gg/2p7xe8udw5";
+    function redirectTo(url) {
+      window.location.href = url;
     }
-
-    // Отображение окна с информацией о разработчиках сайта (flexyt) на 5 минут
-    setTimeout(function() {
-      alert("Разработано командой flexyt");
-    }, 300000);
   </script>
 </body>
+
 </html>
