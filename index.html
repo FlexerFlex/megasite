@@ -1,10 +1,22 @@
+html
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Загрузка чита</title>
+  <title>Discord Button</title>
 </head>
 <body>
-    <h1>Загрузка чита</h1>
-    <button onclick="window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'">Загрузить чит</button>
+  <button onclick="redirectToDiscord()">Discord</button>
+
+  <script>
+    // Функция для перенаправления на https://discord.gg/2p7xe8udw5
+    function redirectToDiscord() {
+      window.location.href = "https://discord.gg/2p7xe8udw5";
+    }
+
+    // Отображение окна с информацией о разработчиках сайта (flexyt) на 5 минут
+    setTimeout(function() {
+      alert("Разработано командой flexyt");
+    }, 300000);
+  </script>
 </body>
 </html>
