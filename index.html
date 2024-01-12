@@ -7,8 +7,18 @@
     body {
       margin: 0;
       overflow: hidden;
-      background: url('bg.gif') no-repeat center center fixed;
-      background-size: cover;
+    }
+
+    video {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      z-index: -1;
     }
 
     .buttons-container {
@@ -22,7 +32,7 @@
       margin: 10px;
       font-size: 24px;
       padding: 10px 20px;
-      background-color: rgba(169, 169, 169, 0.5); /* Серый цвет с прозрачностью */
+      background-color: rgba(169, 169, 169, 0.5);
       color: white;
       border: none;
       border-radius: 8px;
@@ -30,12 +40,17 @@
     }
 
     button:hover {
-      background-color: rgba(128, 128, 128, 0.7); /* Серый цвет с прозрачностью при наведении */
+      background-color: rgba(128, 128, 128, 0.7);
     }
   </style>
 </head>
 
 <body>
+  <video autoplay loop>
+    <source src="bg.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
   <div class="buttons-container">
     <button onclick="redirectTo('credits.html')">Credits</button>
     <button onclick="redirectTo('https://discord.gg/2P7XE8UDW5')">Discord</button>
