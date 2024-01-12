@@ -7,23 +7,19 @@
     body {
       margin: 0;
       overflow: hidden;
+      background: url('bg.gif') no-repeat center center fixed;
+      background-size: cover;
     }
 
-    #background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      pointer-events: none;
+    .buttons-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
 
     button {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      margin: 10px;
       font-size: 24px;
       padding: 10px 20px;
       background-color: rgba(76, 175, 80, 0.8);
@@ -31,7 +27,6 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      z-index: 1;
     }
 
     button:hover {
@@ -41,11 +36,12 @@
 </head>
 
 <body>
-  <img id="background" src="bg.gif" alt="Background GIF">
-  <button onclick="redirectTo('credits.html')">Credits</button>
-  <button onclick="redirectTo('https://discord.gg/2P7XE8UDW5')">Discord</button>
-  <button onclick="redirectTo('cheats.html')">Cheats</button>
-  <button onclick="redirectTo('credits.html')">RP</button>
+  <div class="buttons-container">
+    <button onclick="redirectTo('credits.html')">Credits</button>
+    <button onclick="redirectTo('https://discord.gg/2P7XE8UDW5')">Discord</button>
+    <button onclick="redirectTo('cheats.html')">Cheats</button>
+    <button onclick="redirectTo('credits.html')">RP</button>
+  </div>
 
   <script>
     function redirectTo(url) {
