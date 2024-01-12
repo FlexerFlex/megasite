@@ -3,9 +3,56 @@
 
 <head>
   <title>My Website</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom, #87CEEB, #FFFFFF); /* Градиентный фон от голубого к белому */
+      overflow: hidden; /* Предотвращение прокрутки */
+      margin: 0; /* Убираем отступы вокруг страницы */
+    }
+
+    button {
+      font-size: 24px; /* Увеличиваем размер шрифта кнопок */
+      padding: 10px 20px; /* Увеличиваем отступы вокруг текста кнопок */
+      margin: 20px; /* Добавляем отступы между кнопками */
+      background-color: #4CAF50; /* Зеленый цвет фона кнопок */
+      color: white; /* Белый цвет текста на кнопках */
+      border: none; /* Убираем границу кнопок */
+      border-radius: 8px; /* Добавляем скругленные углы */
+      cursor: pointer; /* Изменяем указатель при наведении на кнопки */
+    }
+
+    button:hover {
+      background-color: #45a049; /* Темно-зеленый цвет фона при наведении */
+    }
+
+    #snowflakes {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .snowflake {
+      position: absolute;
+      background: #fff;
+      border-radius: 50%;
+      pointer-events: none;
+      box-shadow: 0 0 2px #000;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      100% {
+        transform: translateY(100vh);
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <canvas id="snowflakes"></canvas>
   <button onclick="redirectTo('credits.html')">Credits</button>
   <button onclick="redirectTo('https://discord.gg/2P7XE8UDW5')">Discord</button>
   <button onclick="redirectTo('cheats.html')">Cheats</button>
@@ -15,6 +62,42 @@
     function redirectTo(url) {
       window.location.href = url;
     }
+
+    // Create snowflakes
+    document.addEventListener("DOMContentLoaded", function () {
+      const canvas = document.getElementById("snowflakes");
+      const ctx = canvas.getContext("2d");
+
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      for (let i = 0; i < 100; i++) {
+        createSnowflake();
+      }
+
+      function createSnowflake() {
+        const size = Math.random() * 5;
+        const x = Math.random() * window.innerWidth;
+        const y = Math.random() * window.innerHeight;
+        const speed = Math.random() * 1 + 0.5;
+
+        ctx.beginPath();
+        ctx.arc(x, y, size, 0, Math.PI * 2);
+        ctx.fillStyle = "#fff";
+        ctx.fill();
+
+        setInterval(() => {
+          ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+          y + size + speed < window.innerHeight
+            ? (y += speed)
+            : (y = -size);
+          ctx.beginPath();
+          ctx.arc(x, y, size, 0, Math.PI * 2);
+          ctx.fillStyle = "#fff";
+          ctx.fill();
+        }, 40);
+      }
+    });
   </script>
 </body>
 
