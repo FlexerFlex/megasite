@@ -11,6 +11,10 @@
             height: 100vh;
             font-family: Arial, sans-serif;
             text-align: center;
+            background-image: url('bg.gif'); /* Добавлен фон */
+            background-size: cover;
+            background-position: center;
+            color: white; /* Цвет текста для лучшей видимости на фоне */
         }
         
         .site-developers {
@@ -20,6 +24,30 @@
         
         .flexyt-developers {
             font-size: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #3498db;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: #2077b3;
         }
     </style>
 </head>
