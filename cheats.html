@@ -12,10 +12,34 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
+            background-image: url('bg.gif'); /* Добавлен фон */
+            background-size: cover;
+            background-position: center;
+            color: white; /* Цвет текста для лучшей видимости на фоне */
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
         }
 
         button {
             margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #3498db;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2077b3;
         }
     </style>
 </head>
@@ -23,27 +47,22 @@
 
     <h1>Список читов</h1>
 
-    <!-- Кнопка для скачивания HITS -->
     <a href="https://mega.nz/file/jzZXzQwT#JuqJu5q_XeZnFY0VNHzDOm-r3Pr-XkOm6SyXgikIKXc" target="_blank">
         <button>HitBoxes</button>
     </a>
 
-    <!-- Кнопка для скачивания WinnerClient -->
     <a href="https://mega.nz/file/7jAWyQ7L#s0iK49_Lu3PRGE6cD-8Qu19jFBwLV9JDplARK0l9ISw" target="_blank">
         <button>WinnerClient</button>
     </a>
 
-    <!-- Кнопка для скачивания VegaLine -->
     <a href="https://mega.nz/file/YrMgXCSR#prSzUAXi_MOnFNZO8LE6I-of4e_w92djx1w7KWcPR5g" target="_blank">
         <button>VegaLine</button>
     </a>
 
-    <!-- Кнопка для перехода на страницу ThunderHack в GitHub -->
     <a href="https://github.com/Pan4ur/ThunderHack-Recode" target="_blank">
         <button>ThunderHack</button>
     </a>
 
-    <!-- Кнопка для возврата на главную страницу (index.html) -->
     <a href="index.html">
         <button>Вернуться на главную</button>
     </a>
